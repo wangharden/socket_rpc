@@ -10,7 +10,8 @@ ifeq ($(PLATFORM),Windows_NT)
 endif
 
 
-SERVER_SOURCES = $(SOURCES) Server.cpp
+
+SERVER_SOURCES = $(SOURCES) $(WS_SOURCES) Server.cpp
 SERVER_OBJECTS := $(SERVER_SOURCES:.cpp=.o)
 
 CLIENT_SOURCES = $(SOURCES) Client.cpp
@@ -21,7 +22,9 @@ RM = del /Q
 SERVER_EXECUTABLE = Server
 CLIENT_EXECUTABLE = Client
 
-
+# HTML页面
+HTML_DIR = web
+HTML_FILES = $(HTML_DIR)/index.html $(HTML_DIR)/style.css $(HTML_DIR)/script.js
 
 $(warning SERVER_SOURCES is $(SERVER_SOURCES))
 $(warning CLIENT_SOURCES is $(CLIENT_SOURCES))
@@ -35,8 +38,7 @@ else
 endif
 
 
-all: client server clean
-
+all: client server web clean
 
 server: $(SERVER_EXECUTABLE)
 
@@ -57,4 +59,4 @@ $(CLIENT_EXECUTABLE) : $(CLIENT_OBJECTS)
 clean:
 	$(RM) $(SERVER_OBJECTS) $(CLIENT_OBJECTS)
 
-.PHONY: clean
+.PHONY: clean web

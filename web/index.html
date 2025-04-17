@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>WebSocket Client</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>网络客户端</h1>
+    <div class="connection-panel">
+      <div>
+        <label for="server-ip">服务器IP:</label>
+        <input type="text" id="server-ip" value="127.0.0.1">
+      </div>
+      <div>
+        <label for="server-port">端口:</label>
+        <input type="text" id="server-port" value="8080">
+      </div>
+      <button id="connect-btn">连接</button>
+      <button id="disconnect-btn" disabled>断开</button>
+    </div>
+    <div class="message-display" id="message-area"></div>
+    <div class="message-input">
+      <input type="text" id="message-input" placeholder="输入消息..." disabled>
+      <button id="send-btn" disabled>发送</button>
+    </div>
+    <div class="status" id="status-display">未连接</div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

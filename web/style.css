@@ -1,0 +1,110 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+.connection-panel {
+  display: flex;
+  gap: 10px;
+  align-items: center; /* 垂直居中对齐 */
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* 允许换行 */
+}
+.connection-panel div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.connection-panel label {
+  white-space: nowrap; /* 防止标签文字换行 */
+}
+.connection-panel input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 80px; /* 给输入框一个最小宽度 */
+}
+button {
+  padding: 8px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #45a049;
+}
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+.message-display {
+  height: 300px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  background-color: #fafafa;
+}
+.message-input {
+  display: flex;
+  gap: 10px;
+}
+.message-input input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.status {
+  margin-top: 15px;
+  color: #666;
+  font-style: italic;
+}
+.my-message {
+  text-align: right;
+  margin: 8px 0;
+  padding: 5px 10px;
+  background-color: #dcf8c6; /* 浅绿色背景 */
+  border-radius: 5px;
+  display: inline-block; /* 让背景适应内容 */
+  max-width: 70%; /* 防止消息过长 */
+  float: right; /* 确保靠右 */
+  clear: both; /* 防止消息重叠 */
+  word-wrap: break-word; /* 自动换行 */
+  color: #333; /* 字体颜色 */
+}
+.server-message {
+  text-align: left;
+  margin: 8px 0;
+  padding: 5px 10px;
+  background-color: #e0e0e0; /* 浅灰色背景 */
+  border-radius: 5px;
+  display: inline-block; /* 让背景适应内容 */
+  max-width: 70%; /* 防止消息过长 */
+  float: left; /* 确保靠左 */
+  clear: both; /* 防止消息重叠 */
+  word-wrap: break-word; /* 自动换行 */
+  color: #333; /* 字体颜色 */
+}
+
+/* 清除浮动，以便状态栏正确显示 */
+.message-display::after {
+  content: "";
+  display: table;
+  clear: both;
+}
